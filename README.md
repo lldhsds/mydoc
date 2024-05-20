@@ -8,8 +8,6 @@
 - GitHub：托管项目
 - ReadtheDocs：发布网页
 
-
-
 ## Sphinx安装及配置
 
 ### 安装Sphinx
@@ -135,8 +133,6 @@ C:.
 
 sphinx相关命令会安装到python的Scripts文件夹下。如果windows下运行找不到命令，可以检查环境变量是否配置。
 
-
-
 ### 配置及扩展
 
 Sphinx 的配置文件是 source\conf.py，修改如下：
@@ -192,13 +188,9 @@ html_static_path = ['_static']
 - math_number_all: 用于页面中嵌入公式。
 - html_theme: 网页风格，修改可以参见[官方文档](https://www.sphinx-doc.org/en/master/usage/theming.html#builtin-themes)
 
-
-
 安装扩展模块：
 
 ` pip install recommonmark myst_parser`
-
-
 
 ## 撰写文章
 
@@ -396,8 +388,6 @@ Python 是一门功能强大且易于学习的编程语言，适合从初学者�
    :width: 200px
 ```
 
-
-
 说明：
 
 Sphinx的文档格式，默认是 rst 格式，如果你习惯了使用Markdown来写文章，可以使用 Pandoc 这个神器转换一下。转换命令如下：
@@ -407,8 +397,6 @@ pandoc -V mainfont="SimSun" -f markdown -t rst hello.md -o hello.rst
 ```
 
 或者你也可以在 Sphinx 上添加支持 Markdown 渲染的扩展模块。
-
-
 
 文档编写完成后，更新排版文件source\index.rst，增加刚才写的文档：
 
@@ -515,8 +503,6 @@ C:\USERS\XUSHUAI\DOCUMENTS\MYDOC\BUILD
 
 目前网页只是在本地，将站点发布到线上。先将`mydoc`工程文件托管到`github`仓库，然后由`Read the Docs`发布。
 
-
-
 在`mydoc`根目录下，添加`.gitignore`文件，添加要忽略管理的文件：
 
 ```txt
@@ -591,8 +577,6 @@ branch 'main' set up to track 'origin/main'.
 
 ![image-20240520140040385](./res/image-20240520140040385.png)
 
-
-
 因为名称mydoc已经存在，这里我换一个名字，同时修改语言：
 
 ![image-20240520142430201](./res/image-20240520142430201.png)
@@ -642,27 +626,17 @@ sphinx:
 #    - requirements: docs/requirements.txt
 ```
 
-
-
 并将文件推送到仓库。
 
 ![image-20240520142712037](./res/image-20240520142712037.png)
-
-
 
 构建版本，右下角可以看到博客在线地址。：
 
 ![image-20240520142749472](./res/image-20240520142749472.png)
 
-
-
 如果没有添加`.readthedocs.yaml`，构建会提示找不到该文件：
 
 ![image-20240520140945305](./res/image-20240520140945305.png)
-
-
-
-
 
 如果构建失败，请按照错误修改后，重新发起构建流程即可。构建完成的状态如下：
 
@@ -676,11 +650,7 @@ sphinx:
 
 可以在提供的管理面包中进行站点管理，包括设置名称、代码库对接、重新配置等。如果需要重新创建站点，可以在管理中删除站点后重新进行发布上线动作。
 
-
-
 ![image-20240520143742009](./res/image-20240520143742009.png)
-
-
 
 ## 参考资料
 
