@@ -565,3 +565,116 @@ To https://github.com/lldhsds/mydoc.git
 branch 'main' set up to track 'origin/main'.
 ```
 
+## 发布上线
+
+托管完成后，我们要发布它，让别人也可以使用公网访问。你需要先去 [Read the Docs](https://readthedocs.org/dashboard/) 注册下帐号。
+
+注册后登录，选择导入一个项目：
+
+![image-20240520140020696](C:\Users\xushuai\AppData\Roaming\Typora\typora-user-images\image-20240520140020696.png)
+
+导入代码库，选择`Connect to GitHub`，加载github仓库列表后，选择上面创建的`mydoc`:
+
+![image-20240520142315345](C:\Users\xushuai\AppData\Roaming\Typora\typora-user-images\image-20240520142315345.png)
+
+如果无法加载github仓库列表，可以选择手动导入：
+
+![image-20240520140040385](C:\Users\xushuai\AppData\Roaming\Typora\typora-user-images\image-20240520140040385.png)
+
+
+
+因为名称mydoc已经存在，这里我换一个名字，同时修改语言：
+
+![image-20240520142430201](C:\Users\xushuai\AppData\Roaming\Typora\typora-user-images\image-20240520142430201.png)
+
+提醒添加配置文件：
+
+![image-20240520142522775](C:\Users\xushuai\AppData\Roaming\Typora\typora-user-images\image-20240520142522775.png)
+
+在mydoc目录下创建文件`.readthedocs.yaml`，复制上面的内容。修改如下两个地方：
+
+- build过程使用的python版本，保持和本地python版本一致：`python: "3.10"`
+
+- `sphinx`配置文件路径为：`configuration: source/conf.py`：
+
+```yaml
+# .readthedocs.yaml
+# Read the Docs configuration file
+# See https://docs.readthedocs.io/en/stable/config-file/v2.html for details
+
+# Required
+version: 2
+
+# Set the OS, Python version and other tools you might need
+build:
+  os: ubuntu-22.04
+  tools:
+    python: "3.10"
+    # You can also specify other tool versions:
+    # nodejs: "19"
+    # rust: "1.64"
+    # golang: "1.19"
+
+# Build documentation in the "docs/" directory with Sphinx
+sphinx:
+  configuration: source/conf.py
+
+# Optionally build your docs in additional formats such as PDF and ePub
+# formats:
+#    - pdf
+#    - epub
+
+# Optional but recommended, declare the Python requirements required
+# to build your documentation
+# See https://docs.readthedocs.io/en/stable/guides/reproducible-builds.html
+# python:
+#    install:
+#    - requirements: docs/requirements.txt
+```
+
+
+
+并将文件推送到仓库。
+
+![image-20240520142712037](C:\Users\xushuai\AppData\Roaming\Typora\typora-user-images\image-20240520142712037.png)
+
+
+
+构建版本，右下角可以看到博客在线地址。：
+
+![image-20240520142749472](C:\Users\xushuai\AppData\Roaming\Typora\typora-user-images\image-20240520142749472.png)
+
+
+
+如果没有添加`.readthedocs.yaml`，构建会提示找不到该文件：
+
+![image-20240520140945305](C:\Users\xushuai\AppData\Roaming\Typora\typora-user-images\image-20240520140945305.png)
+
+
+
+
+
+重新构建，构建完成：
+
+![image-20240520141340280](C:\Users\xushuai\AppData\Roaming\Typora\typora-user-images\image-20240520141340280.png)
+
+查看文档，如下图可以看到博客站点已经发布到在线的平台：
+
+
+
+![image-20240520141522611](C:\Users\xushuai\AppData\Roaming\Typora\typora-user-images\image-20240520141522611.png)
+
+这里要提醒一下的是，Sphinx的文档格式，默认是 rst 格式，如果你习惯了使用Markdown来写文章，可以使用 Pandoc 这个神器转换一下。
+
+这里给出格式转换命令。
+
+```
+pandoc -V mainfont="SimSun" -f markdown -t rst hello.md -o hello.rst
+```
+
+或者你也可以在 Sphinx 上添加支持 Markdown 渲染的扩展模块。这需要你自己去折腾了。
+
+
+
+## 站点管理
+
