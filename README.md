@@ -509,7 +509,7 @@ C:\USERS\XUSHUAI\DOCUMENTS\MYDOC\BUILD
 
 使用浏览器打开 build\html\ 目录下的index.html文件，效果如下：
 
-![image-20240520132653346](C:\Users\xushuai\AppData\Roaming\Typora\typora-user-images\image-20240520132653346.png)
+![image-20240520132653346](.\res\image-20240520132653346.png)
 
 ## GitHub托管
 
@@ -581,25 +581,25 @@ branch 'main' set up to track 'origin/main'.
 
 注册后登录，选择导入一个项目：
 
-![image-20240520140020696](C:\Users\xushuai\AppData\Roaming\Typora\typora-user-images\image-20240520140020696.png)
+![image-20240520140020696](.\res\image-20240520140020696.png)
 
 导入代码库，选择`Connect to GitHub`，加载github仓库列表后，选择上面创建的`mydoc`:
 
-![image-20240520142315345](C:\Users\xushuai\AppData\Roaming\Typora\typora-user-images\image-20240520142315345.png)
+![image-20240520142315345](.\res\image-20240520142315345.png)
 
 如果无法加载github仓库列表，可以选择手动导入：
 
-![image-20240520140040385](C:\Users\xushuai\AppData\Roaming\Typora\typora-user-images\image-20240520140040385.png)
+![image-20240520140040385](.\res\image-20240520140040385.png)
 
 
 
 因为名称mydoc已经存在，这里我换一个名字，同时修改语言：
 
-![image-20240520142430201](C:\Users\xushuai\AppData\Roaming\Typora\typora-user-images\image-20240520142430201.png)
+![image-20240520142430201](.\res\image-20240520142430201.png)
 
 提醒添加配置文件：
 
-![image-20240520142522775](C:\Users\xushuai\AppData\Roaming\Typora\typora-user-images\image-20240520142522775.png)
+![image-20240520142522775](.\res\image-20240520142522775.png)
 
 在mydoc目录下创建文件`.readthedocs.yaml`，复制上面的内容。修改如下两个地方：
 
@@ -646,19 +646,19 @@ sphinx:
 
 并将文件推送到仓库。
 
-![image-20240520142712037](C:\Users\xushuai\AppData\Roaming\Typora\typora-user-images\image-20240520142712037.png)
+![image-20240520142712037](.\res\image-20240520142712037.png)
 
 
 
 构建版本，右下角可以看到博客在线地址。：
 
-![image-20240520142749472](C:\Users\xushuai\AppData\Roaming\Typora\typora-user-images\image-20240520142749472.png)
+![image-20240520142749472](.\res\image-20240520142749472.png)
 
 
 
 如果没有添加`.readthedocs.yaml`，构建会提示找不到该文件：
 
-![image-20240520140945305](C:\Users\xushuai\AppData\Roaming\Typora\typora-user-images\image-20240520140945305.png)
+![image-20240520140945305](.\res\image-20240520140945305.png)
 
 
 
@@ -666,11 +666,11 @@ sphinx:
 
 如果构建失败，请按照错误修改后，重新发起构建流程即可。构建完成的状态如下：
 
-![image-20240520143417792](C:\Users\xushuai\AppData\Roaming\Typora\typora-user-images\image-20240520143417792.png)
+![image-20240520143417792](.\res\image-20240520143417792.png)
 
 查看文档，如下图可以看到博客站点已经发布到在线的平台：
 
-![image-20240520143452731](C:\Users\xushuai\AppData\Roaming\Typora\typora-user-images\image-20240520143452731.png)
+![image-20240520143452731](.\res\image-20240520143452731.png)
 
 ## 站点管理
 
@@ -678,7 +678,7 @@ sphinx:
 
 
 
-![image-20240520143742009](C:\Users\xushuai\AppData\Roaming\Typora\typora-user-images\image-20240520143742009.png)
+![image-20240520143742009](.\res\image-20240520143742009.png)
 
 
 
