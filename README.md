@@ -12,7 +12,7 @@
 
 ### 安装Sphinx
 
-` pip install sphinx sphinx-autobuild sphinx_rtd_theme`
+`pip install sphinx sphinx-autobuild sphinx_rtd_theme`
 
 创建一个工程目录myblog，在命令行界面下执行`sphinx-quickstart`进行配置：
 
@@ -657,3 +657,5 @@ sphinx:
 [Sphinx + Read the Docs 从懵逼到入门 - 知乎 (zhihu.com)](https://zhuanlan.zhihu.com/p/264647009)
 
 [pycharm-guide](https://github.com/iswbm/pycharm-guide)
+
+[Github + Sphinx+Read the docs 实战入门指南](https://juejin.cn/post/7217104536930566204)
