@@ -11,10 +11,3 @@ Welcome to mydoc's documentation!
    :caption: Contents:
 
    Python编程语言简明指南
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`

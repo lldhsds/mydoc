@@ -2,8 +2,6 @@
 
 基于Markdown+Pandoc+Sphinx + GitHub + Read the Docs 搭建个人博客，管理个人技术文章。
 
-
-
 - Markdown：书写文档
 - Pandoc：格式转化
 - Sphinx：生成网页
@@ -398,9 +396,21 @@ Python 是一门功能强大且易于学习的编程语言，适合从初学者�
    :width: 200px
 ```
 
-文档完成后，更新排版文件source\index.rst，增加刚才写的文档：
 
 
+说明：
+
+Sphinx的文档格式，默认是 rst 格式，如果你习惯了使用Markdown来写文章，可以使用 Pandoc 这个神器转换一下。转换命令如下：
+
+```
+pandoc -V mainfont="SimSun" -f markdown -t rst hello.md -o hello.rst
+```
+
+或者你也可以在 Sphinx 上添加支持 Markdown 渲染的扩展模块。
+
+
+
+文档编写完成后，更新排版文件source\index.rst，增加刚才写的文档：
 
 ```reStructuredText
 .. mydoc documentation master file, created by
@@ -654,27 +664,26 @@ sphinx:
 
 
 
-重新构建，构建完成：
+如果构建失败，请按照错误修改后，重新发起构建流程即可。构建完成的状态如下：
 
-![image-20240520141340280](C:\Users\xushuai\AppData\Roaming\Typora\typora-user-images\image-20240520141340280.png)
+![image-20240520143417792](C:\Users\xushuai\AppData\Roaming\Typora\typora-user-images\image-20240520143417792.png)
 
 查看文档，如下图可以看到博客站点已经发布到在线的平台：
 
-
-
-![image-20240520141522611](C:\Users\xushuai\AppData\Roaming\Typora\typora-user-images\image-20240520141522611.png)
-
-这里要提醒一下的是，Sphinx的文档格式，默认是 rst 格式，如果你习惯了使用Markdown来写文章，可以使用 Pandoc 这个神器转换一下。
-
-这里给出格式转换命令。
-
-```
-pandoc -V mainfont="SimSun" -f markdown -t rst hello.md -o hello.rst
-```
-
-或者你也可以在 Sphinx 上添加支持 Markdown 渲染的扩展模块。这需要你自己去折腾了。
-
-
+![image-20240520143452731](C:\Users\xushuai\AppData\Roaming\Typora\typora-user-images\image-20240520143452731.png)
 
 ## 站点管理
 
+可以在提供的管理面包中进行站点管理，包括设置名称、代码库对接、重新配置等。如果需要重新创建站点，可以在管理中删除站点后重新进行发布上线动作。
+
+
+
+![image-20240520143742009](C:\Users\xushuai\AppData\Roaming\Typora\typora-user-images\image-20240520143742009.png)
+
+
+
+## 参考资料
+
+[Sphinx + Read the Docs 从懵逼到入门 - 知乎 (zhihu.com)](https://zhuanlan.zhihu.com/p/264647009)
+
+[pycharm-guide](https://github.com/iswbm/pycharm-guide)
