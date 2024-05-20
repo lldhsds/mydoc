@@ -654,27 +654,18 @@ sphinx:
 
 
 
-重新构建，构建完成：
+如果构建失败，请按照错误修改后，重新发起构建流程即可。构建完成的状态如下：
 
-![image-20240520141340280](C:\Users\xushuai\AppData\Roaming\Typora\typora-user-images\image-20240520141340280.png)
+![image-20240520143417792](C:\Users\xushuai\AppData\Roaming\Typora\typora-user-images\image-20240520143417792.png)
 
 查看文档，如下图可以看到博客站点已经发布到在线的平台：
 
-
-
-![image-20240520141522611](C:\Users\xushuai\AppData\Roaming\Typora\typora-user-images\image-20240520141522611.png)
-
-这里要提醒一下的是，Sphinx的文档格式，默认是 rst 格式，如果你习惯了使用Markdown来写文章，可以使用 Pandoc 这个神器转换一下。
-
-这里给出格式转换命令。
-
-```
-pandoc -V mainfont="SimSun" -f markdown -t rst hello.md -o hello.rst
-```
-
-或者你也可以在 Sphinx 上添加支持 Markdown 渲染的扩展模块。这需要你自己去折腾了。
-
-
+![image-20240520143452731](C:\Users\xushuai\AppData\Roaming\Typora\typora-user-images\image-20240520143452731.png)
 
 ## 站点管理
 
+可以在提供的管理面包中进行站点管理，包括设置名称、代码库对接、重新配置等。如果需要重新创建站点，可以在管理中删除站点后重新进行发布上线动作。
+
+
+
+![image-20240520143742009](C:\Users\xushuai\AppData\Roaming\Typora\typora-user-images\image-20240520143742009.png)
