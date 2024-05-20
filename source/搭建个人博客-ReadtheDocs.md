@@ -428,20 +428,6 @@ Indices and tables
 然后执行make html 生成html静态文件：
 
 ```powershell
-PS C:\Users\xushuai\Documents\mydoc> ls
-
-
-    目录: C:\Users\xushuai\Documents\mydoc
-
-
-Mode                 LastWriteTime         Length Name
-----                 -------------         ------ ----
-d-----         2024/5/20     11:45                build
-d-----         2024/5/20     13:08                source
--a----         2024/5/20     11:45            804 make.bat
--a----         2024/5/20     11:45            638 Makefile
-
-
 PS C:\Users\xushuai\Documents\mydoc> .\make.bat html
 Running Sphinx v7.3.7
 loading translations [zh_CN]... done
@@ -451,7 +437,6 @@ writing output...
 building [html]: targets for 2 source files that are out of date
 updating environment: [new config] 2 added, 0 changed, 0 removed
 reading sources... [100%] index
-C:\Users\xushuai\Documents\mydoc\source\RST指南.rst:: WARNING: image file not readable: path/to/image.png
 looking for now-outdated files... none found
 pickling environment... done
 checking consistency... done
@@ -464,7 +449,7 @@ generating indices... genindex done
 writing additional pages... search done
 dumping search index in Chinese (code: zh)... done
 dumping object inventory... done
-build succeeded, 1 warning.
+build succeeded.
 
 The HTML pages are in build\html.
 ```
@@ -479,20 +464,20 @@ C:\USERS\XUSHUAI\DOCUMENTS\MYDOC\BUILD
 ├─doctrees
 │      environment.pickle
 │      index.doctree
-│      RST指南.doctree
+│      Python编程语言简明指南.doctree
 │
 └─html
     │  .buildinfo
     │  genindex.html
     │  index.html
     │  objects.inv
-    │  RST指南.html
+    │  Python编程语言简明指南.html
     │  search.html
     │  searchindex.js
     │
     ├─_sources
     │      index.rst.txt
-    │      RST指南.rst.txt
+    │      Python编程语言简明指南.rst.txt
     │
     └─_static
             alabaster.css
@@ -512,8 +497,71 @@ C:\USERS\XUSHUAI\DOCUMENTS\MYDOC\BUILD
 
 
 
+使用浏览器打开 build\html\ 目录下的index.html文件，效果如下：
 
+![image-20240520132653346](C:\Users\xushuai\AppData\Roaming\Typora\typora-user-images\image-20240520132653346.png)
 
 ## GitHub托管
 
-将`mydoc`项目推送到自己的`github`仓库中，注意生成`.gitignore`文件，只需要忽略`build/`文件夹即可
+目前网页只是在本地，将站点发布到线上。先将`mydoc`工程文件托管到`github`仓库，然后由`Read the Docs`发布。
+
+
+
+在`mydoc`根目录下，添加`.gitignore`文件，添加要忽略管理的文件：
+
+```txt
+build/
+.idea/
+*.pyc
+```
+
+接下来，在你的GitHub上新建一个仓库。然后把`mydoc`这个目录下的所有文件都提交上去。Github创建仓库后会给出两种推送文件的方式。
+
+1. 从命令行创建一个仓库：
+
+```sh
+echo "# mydoc" >> README.md
+git init
+git add .
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/lldhsds/mydoc.git
+git push -u origin main
+```
+
+2. 推送一个已经存在的仓库：
+
+```shell
+git remote add origin https://github.com/lldhsds/mydoc.git
+git branch -M main
+git push -u origin main
+```
+
+我这里选择方式1：
+
+```powershell
+PS C:\Users\xushuai\Documents\mydoc> git push -u origin main
+fatal: unable to access 'https://github.com/lldhsds/mydoc.git/': SSL certificate problem: unable to get local issuer certificate
+# 遇到上面的错误，关闭ssl
+PS C:\Users\xushuai\Documents\mydoc> git config --global http.sslVerify false
+PS C:\Users\xushuai\Documents\mydoc> git push -u origin main
+warning: ----------------- SECURITY WARNING ----------------
+warning: | TLS certificate verification has been disabled! |
+warning: ---------------------------------------------------
+warning: HTTPS connections may not be secure. See https://aka.ms/gcm/tlsverify for more information.
+info: please complete authentication in your browser...
+warning: ----------------- SECURITY WARNING ----------------
+warning: | TLS certificate verification has been disabled! |
+warning: ---------------------------------------------------
+warning: HTTPS connections may not be secure. See https://aka.ms/gcm/tlsverify for more information.
+Enumerating objects: 11, done.
+Counting objects: 100% (11/11), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (9/9), done.
+Writing objects: 100% (11/11), 8.97 KiB | 4.49 MiB/s, done.
+Total 11 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/lldhsds/mydoc.git
+ * [new branch]      main -> main
+branch 'main' set up to track 'origin/main'.
+```
+
