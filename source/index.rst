@@ -11,3 +11,5 @@ Welcome to mydoc's documentation!
    :caption: Contents:
 
    Python编程语言简明指南
+   Python/*
+
