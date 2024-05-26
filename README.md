@@ -659,3 +659,5 @@ sphinx:
 [pycharm-guide](https://github.com/iswbm/pycharm-guide)
 
 [Github + Sphinx+Read the docs 实战入门指南](https://juejin.cn/post/7217104536930566204)
+
+https://github.com/iswbm/pycharm-guide/tree/master
